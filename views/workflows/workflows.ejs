@@ -1,0 +1,170 @@
+<section>
+	<div class="container-fluid">
+		<div class="box-member-area">
+			
+			<%- include('../components/left')-%>
+			<div class="right-member-area">
+				<!--
+				<div class="alert alert-warning alert-dismissible">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					Your Free Trial expires in 2 days. You can manually publish 9 more video(s) with your Free Trial. For unlimited automatic publishing,
+				</div>
+				-->
+				<div style="margin-bottom:3%;">
+					
+					<button type="button" class="btn btn-success  btnAddWorkflow"><i class="fas fa-plus"></i> Create a New Workflow</button>
+					<!--
+					<button type="button" class="btn btn-success btnRefreshWorkflow"><i class="fas fa-hourglass"></i> Refresh </button>
+					-->
+				</div>
+				<div id="wizard" style="display:none;">
+					<form action="#" id="myForm" role="form" data-toggle="validator" method="post" accept-charset="utf-8">
+
+						<!-- SmartWizard html -->
+						<div id="smartwizard">
+							<ul>
+								<li><a href="#step-1">Name<br /><small>Step 1</small></a></li>
+								<li><a href="#step-2">Source<br /><small>Step 2</small></a></li>
+								<li><a href="#step-3">Action<br /><small>Step 3</small></a></li>
+								<li><a href="#step-4">Destination<br /><small>Step 4</small></a></li>
+								<li><a href="#step-5">Term & Condition<br /><small>Step 5</small></a></li>
+							</ul>
+				
+							<div>
+								<div id="step-1">
+									<h2>Your Workflows Name</h2>
+									<div id="form-step-0" role="form" data-toggle="validator">
+										<div class="form-group">
+											<label for="email">Workflows Name:</label>
+											<input type="input" name="txtWorkflowName" id="txtWorkflowName" class="form-control"  placeholder="Write your workflow's name" required>
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+				
+								</div>
+								<div id="step-2">
+									<h2>Your Source</h2>
+									<div id="form-step-1" role="form" data-toggle="validator">
+										<div class="form-group">
+											<label for="name">Connection Type:</label>
+											<select id="optFormWorkflowSourceType" name="optFormWorkflowSourceType" class="form-control" required>
+												<option value="">-- Choose Your Source Type --</option>
+												<option value="youtube">Youtube</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+										<div class="form-group">
+											<label for="name">Connection Name:</label>
+											<select id="optFormWorkflowSourceConnectionName" name="optFormWorkflowSourceConnectionName" class="form-control" required>
+												<option value="1">-- Select Your Connection Name --</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+										
+									</div>
+								</div>
+								<div id="step-3">
+									<h2>What is your Action ?</h2>
+									<div id="form-step-2" role="form" data-toggle="validator">
+										<div class="form-group">
+											<label for="name">Action:</label>
+											<select id="optFormWorkflowAction" name="optFormWorkflowAction" class="form-control" required>
+												<option value="">-- Choose an action --</option>
+												<option value="convertVtoA">Convert Video to Audio</option>
+												<option value="convertAtoV">Convert Audio to Video</option>
+												<option value="upload">Upload Video</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+										<div class="form-group">
+											<label for="name">Type:</label>
+											<select id="optFormWorkflowTypeVideo" name="optFormWorkflowTypeVideo" class="form-control" required>
+												<option value="">-- Choose Type --</option>
+												<option value="Full Video">Full video</option>
+												<option value="Snippets">Snippets (Clips)</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+										<div class="form-group">
+											<label for="address">Description</label>
+											<textarea class="form-control" name="description" id="description" rows="3" placeholder="Write your description..." required></textarea>
+											<div class="help-block with-errors"></div>
+										</div>
+										
+									</div>
+								</div>
+								<div id="step-4" class="">
+									<h2>Your Destination</h2>
+									<div id="form-step-3" role="form" data-toggle="validator">
+										<div class="form-group">
+											<label for="name">Connection Type:</label>
+											<select id="optFormWorkflowDestinationType" name="optFormWorkflowDestinationType" class="form-control" required>
+												<option value="">-- Choose Your Source Type --</option>
+												<option value="youtube">Youtube</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+										<div class="form-group">
+											<label for="name">Connection Name:</label>
+											<select id="optFormWorkflowDestinationConnectionName" name="optFormWorkflowDestinationConnectionName" class="form-control" required>
+												<option value="0">-- Select Your Connection --</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+										
+									</div>
+								</div>
+								<div id="step-5" class="">
+									<h2>Terms and Conditions</h2>
+									<div class="jumbotron">
+										
+										<h3 class="display-4">Hello, <span class="title_name"></span></h3>
+									
+										<p class="lead" style="text-align: justify;">By clicking the checkbox below:<br> 
+											I agree to publish my content via octopuce.io.<br>
+											I must not infringe on others' intellectual property rights and are responsible for legal compliance. <br>
+											I agree to indemnify FMTPLA Inc. against claims arising from breaches of this agreement.
+										</p>
+										<hr class="my-4">
+										<div class="row">
+											<div class="col-md-2 img-source">
+
+											</div>
+											<div class="col-md-2">
+												<img  width='50px;' height='50px;' src='/assets/images/elements/double_arrow.png' />
+											</div>
+											<div class="col-md-2 img-destination">
+												
+											</div>
+										</div>
+										<p><p><p><p></p>
+										<p><span class="fa fa-plus" style="color: rgb(11, 128, 61);"> octopuce.io helps you to automate your social media content.</span></p>
+									
+										<div id="form-step-4" role="form" data-toggle="validator">
+											<div class="form-group">
+												<label for="terms">I agree with the Term & Condition</label>
+												<input type="checkbox" id="terms" data-error="Please accept the Terms and Conditions"  required>
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+									</div>
+									
+									
+								</div>
+
+							</div>
+						</div>
+					</form>
+				</div>
+				
+				<div class="row workflow_data" >
+					
+				</div>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</section>
+<script>
+	var page="workflows"	
+</script>

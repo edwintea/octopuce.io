@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Octopuce | Facebook</title>
+<meta charset="UTF-8">
+<%- include('../components/css')-%>
+</head>
+<body>
+  <%- include('../components/header')-%>
+  
+  <div style="margin-top:25%;">
+    <center>
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+      var page="account"
+    </script>
+    <!--CUSTOM JS-->
+    <script type="text/javascript" src="/assets/js/master.js"></script>
+    <script type="text/javascript" src="/assets/js/helper.js"></script>
+    <!--
+    <script type="text/javascript" src="/assets/js/socket.js"></script>
+    -->
+    <script type="text/javascript" src="/assets/js/host.js"></script>
+    <script type="text/javascript" src="/assets/js/const.js"></script>
+    <script type="text/javascript" src="/frontend/assets/js/api.js"></script>
+    <script type="text/javascript" src="/assets/js/module.js"></script>
+
+
+    <input type="text" id="txtState" value="<%= state %>" style="display:none;"/>
+      
+    <script>
+      var fbResponse={}
+      function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+        console.log('statusChangeCallback');
+        console.log(response);                   // The current login status of the person.
+        if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+          fbResponse=response
+          testAPI();  
+
+        } else {                                 // Not logged into your webpage or we are unable to tell.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into this webpage.';
+        }
+      }
+
+      function checkLoginState() {               // Called when a person is finished with the Login Button.
+        FB.getLoginStatus(function(response) {   // See the onlogin handler
+          statusChangeCallback(response);
+        });
+      }
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1541327403295745',
+          cookie     : true,                     // Enable cookies to allow the server to access the session.
+          xfbml      : true,                     // Parse social plugins on this webpage.
+          version    : 'v18.0'           // Use this Graph API version for this call.
+        });
+
+
+        FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+          statusChangeCallback(response);        // Returns the login status.
+        });
+      };
+    
+      function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', 
+          'GET',
+          {"fields":"id,last_name,first_name,birthday,gender,middle_name,link,name,education,albums,friends{email},photos,videos{content_category,content_tags,created_time,description,embed_html,embeddable,event,from,id,icon,format,custom_labels,backdated_time_granularity,backdated_time,ad_breaks}"},
+          function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('status').innerHTML =
+            'Thanks for logging in, ' + response.name + '!';
+
+            var uid = fbResponse.authResponse.userID;
+            var access_token = fbResponse.authResponse.accessToken;
+            var refresh_token = fbResponse.authResponse.signedRequest;
+            var expire_date=fbResponse.authResponse.data_access_expiration_time
+            var remark=fbResponse
+
+            let state=$('#txtState').val();
+            let data={
+              chanel_id     : uid,
+              access_token  : access_token,
+              refresh_token : refresh_token,
+              expire_date   : expire_date,
+              remark        : JSON.stringify(remark)
+            }
+
+            Ajax(Api.Connections.chanel_update_token(state),"POST",data,function(){
+                console.log("success update token")
+                setTimeout(function(){
+                  window.close()
+                },'1000')
+            })
+
+            //modified here
+
+        });
+      }
+
+    </script>
+
+    <!-- The JS SDK Login Button -->
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="status"></div>
+
+    <!-- Load the JS SDK asynchronously -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
+    <script>
+      $(function(){
+        $('.box-account').hide();
+
+      })
+    </script>
+    </center>
+</div>
+</body>
+</html>

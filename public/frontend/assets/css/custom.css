@@ -1,0 +1,59 @@
+/*
+calendar
+*/
+#calendar-container {
+    position: relative;    
+    height: 700px;
+}
+.fc-header-toolbar {}
+
+/*
+gallery
+*/
+.divGallery{
+    margin-left:5%;
+  }
+  div.gallery {
+    margin: 5px;
+    border: 0.1px solid #ccc;
+    float: left;
+    width: 150px;
+  }
+
+  div.gallery:hover {
+     cursor: pointer;
+     background-color:beige
+
+  }
+  
+  div.gallery img {
+    width: 30%;
+    max-height: 50px;
+  }
+  
+  div.desc {
+    padding: 5px;
+    text-align: center;
+    font-size:10px;
+  }
+
+  /*
+end
+  */
+  .text-modal{
+    width: auto;
+    min-height: 10px;
+    font-size: 30px;
+    text-align: center;
+    opacity: 0.87;
+    color:turquoise;
+  }
+
+  .error .text-danger{
+    color: rgba(166, 66, 66, 0.69);
+    border-color: rgba(166, 66, 66, 0.69);
+    background-color: rgba(166, 66, 66, 0.69);
+    font-size:3px;
+    }
+
+  

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Octopuce | Pinterest</title>
+<meta charset="UTF-8">
+<%- include('../components/css')-%>
+</head>
+<body>
+  <%- include('../components/header')-%>
+  
+  <div style="margin-top:20%;">
+    <center>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><b>Pinterest Connected<b></h5>
+          <img class="card-img-top" src="/assets/images/illustrations/man-with-laptop-light.png" width="100px" alt="Card image cap">
+          <p class="card-text"><%= message %></p>
+          <a href="#" class="btn btn-primary btnClose">Close this page</a>
+        </div>
+      </div>
+    </center>
+
+    
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+      var page="account"
+    </script>
+    <!--CUSTOM JS-->
+    <script type="text/javascript" src="/assets/js/master.js"></script>
+    <script type="text/javascript" src="/assets/js/helper.js"></script>
+    <!--
+    <script type="text/javascript" src="/assets/js/socket.js"></script>
+    -->
+    <script type="text/javascript" src="/assets/js/host.js"></script>
+    <script type="text/javascript" src="/assets/js/const.js"></script>
+    <script type="text/javascript" src="/frontend/assets/js/api.js"></script>
+    <script type="text/javascript" src="/assets/js/module.js"></script>
+
+    <script>
+      $(function(){
+        $('.box-account').hide();
+        setInterval(function(){
+            window.close();
+        },'5000')
+
+        $('.btnClose').click(function(){
+            window.close();
+        })
+
+      })
+    </script>
+   
+</div>
+</body>
+</html>

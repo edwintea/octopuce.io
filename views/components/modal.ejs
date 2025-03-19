@@ -1,0 +1,193 @@
+
+<div id="viewModalLogout" class="modal fade" role="dialog">
+	<div class="box-table">
+		<div class="display-table">
+			<div class="modal-overlay" data-dismiss="modal"></div>
+			<div class="display-table-cell">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="box-modal">
+
+							<div class="box-close-alt" data-dismiss="modal">
+								<i class="fas fa-times"></i>
+							</div>
+
+							<div class="icon-modal">
+								<i class="fas fa-question-circle"></i>
+							</div>
+							<center>
+								Halo <b class="account-name">Edwin</b>. Are you sure you want to exit this page?
+							</center>
+
+							<div class="text-center">
+								<button class="btn-silver" data-dismiss="modal">
+									Cancel
+								</button>
+								&nbsp;
+								<a href="#">
+									<button class="btn-blue btnLogout">
+										Logout
+									</button>
+								</a>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div id="viewModalEditProfile" class="modal fade" role="dialog">
+	<div class="box-table">
+		<div class="display-table">
+			<div class="modal-overlay" data-dismiss="modal"></div>
+			<div class="display-table-cell">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="box-modal">
+
+							<div class="box-close-alt" data-dismiss="modal">
+								<i class="fas fa-times"></i>
+							</div>
+
+							<div class="icon-modal">
+								<i class="fas fa-user"></i>
+							</div>
+
+							<h3>
+								Change Profile
+							</h3>
+
+							<form method="POST" action="/account">
+								<div class="box-field">
+									<input type="text" name="txtProfileEditName" id="txtProfileEditName" class="text-field" placeholder="Name">
+									<i class="fas fa-user icon-field"></i>
+								</div>
+								<div class="box-field">
+									<input type="text" name="txtProfileEditPhone" id="txtProfileEditPhone" class="text-field" placeholder="No. Telp">
+									<i class="fas fa-phone icon-field"></i>
+								</div>
+								<div class="upload-document">
+									<label class="button-upload">
+									 	Upload Foto
+									 	 <input type="file" class="text-file-alt">
+									 </label>
+									 <input type="text" name="txtProfileEditPhoto" id="txtProfileEditPhoto" class="text-field text-file"  disabled="disabled">
+								</div>
+
+								<div class="text-center">
+									<button class="btn-silver" data-dismiss="modal">
+										Cancel
+									</button>
+									&nbsp;
+									<button class="btn-blue">
+										Submit
+									</button>
+								</div>
+							</form>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div id="viewModalEditAccount" class="modal fade" role="dialog">
+	<div class="box-table">
+		<div class="display-table">
+			<div class="modal-overlay" data-dismiss="modal"></div>
+			<div class="display-table-cell">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						
+						<div class="box-modal">
+
+							<div class="box-close-alt" data-dismiss="modal">
+								<i class="fas fa-times"></i>
+							</div>
+
+							<div class="icon-modal">
+								<i class="fas fa-user"></i>
+							</div>
+
+							<h3>
+								Change Account
+							</h3>
+
+							<form method="POST" action="account.html">
+								
+								<div class="title-field">Email</div>
+								<div class="box-field">
+									<input type="text" name="txtAccountEditName"  id="txtAccountEditName" class="text-field">
+									<i class="fas fa-envelope icon-field"></i>
+								</div>
+
+								<div class="title-field">Password</div>
+								<div class="box-field">
+									<input type="password" name="txtAccountEditPassword" id="txtAccountEditPassword" class="text-field">
+									<i class="fas fa-lock icon-field"></i>
+								</div>
+
+								<div class="text-center">
+									<button class="btn-silver" data-dismiss="modal">
+										Cancel
+									</button>
+									&nbsp;
+									<button class="btn-blue">
+										Submit
+									</button>
+								</div>
+							</form>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div id="modalAddConnection" class="modal fade bd-example-modal-lg" role="dialog">
+	<div class="box-table">
+		<div class="display-table">
+			<div class="modal-overlay" data-dismiss="modal"></div>
+			<div class="display-table-cell">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							Choose A Connection 
+						</div>
+						<div class="box-modal">
+
+							<div class="box-close-alt" data-dismiss="modal">
+								<i class="fas fa-times"></i>
+							</div>
+							<center>
+								<img src="" class='img-modal' style="width:50px;height:50px;display:none;" />
+							
+								<span class="text-modal"></span>
+							
+							</center>
+							
+							<div class="row">
+								<div class="col">
+									<div id="contentConnectionLists" >
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
